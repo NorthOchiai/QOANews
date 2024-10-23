@@ -4,8 +4,8 @@ name: NHKNewsGet
 on:
   workflow_dispatch:
   
-  schedule:
-    - cron: '50 * * * *'
+  #schedule:
+  #  - cron: '50 * * * *'
 
 permissions:
   actions: write

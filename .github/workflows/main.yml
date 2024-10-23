@@ -1,0 +1,38 @@
+
+name: NHKNewsGet
+
+on:
+  workflow_dispatch:
+  
+  schedule:
+    - cron: '50 * * * *'
+
+permissions:
+  actions: write
+  checks: write
+  contents: write
+
+#自動化
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.12
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install feedparser
+          
+      - name: Run script
+        run: |
+          python NHKNewsGet.py
+          git config user.name  "NorthOchiai"
+          git config user.email "gunitydetteiu@gmail.com"
+          git add .
+          git commit -m "Auto updated"
+          git push

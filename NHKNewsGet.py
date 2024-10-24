@@ -13,7 +13,7 @@ for i in range(8):
     
     #ジャンルごとのニュース
     news=[]
-    news.append(raw['feed']['updated'])
+    news['published']=raw['feed']['updated']
     for rawArticle in raw['entries']:
         article={}
         article['title'] = rawArticle['title']

@@ -28,6 +28,6 @@ newsJson = json.dumps(newsList, ensure_ascii=False)
 
 # ファイル出力
 sourcePath = os.path.dirname(__file__)
-f = open(sourcePath+"/news", "w", encoding='utf-8')
+f = open(sourcePath+"/news.json", "w", encoding='utf-8')
 f.write(newsJson)
 f.close()

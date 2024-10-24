@@ -12,6 +12,7 @@ for i in range(8):
 
     # ジャンルごとのニュース
     newsList = {}
+    newsList['cat']=raw['feed']['title']
     newsList['updated'] = raw['feed']['updated']
     news = []
     for rawArticle in raw['entries']:
@@ -22,9 +23,10 @@ for i in range(8):
         article['link'] = rawArticle['link']
         news.append(article)
     newsList['news'] = news
+    newsDict.append(newsList)
 
 # jsonに変換
-newsJson = json.dumps(newsList, ensure_ascii=False)
+newsJson = json.dumps(newsDict, ensure_ascii=False)
 
 # ファイル出力
 sourcePath = os.path.dirname(__file__)

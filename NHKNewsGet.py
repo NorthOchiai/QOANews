@@ -1,4 +1,5 @@
 import json
+import datetime
 import feedparser
 import os
 
@@ -32,4 +33,11 @@ newsJson = json.dumps(newsDict, ensure_ascii=False)
 sourcePath = os.path.dirname(__file__)
 f = open(sourcePath+"/news.json", "w", encoding='utf-8')
 f.write(newsJson)
+f.close()
+f = open(sourcePath+"/date.json", "w",encoding='utf-8')
+
+dateDict={}
+dateDict['committed']=str(datetime.datetime.now())
+dateDictJson = json.dumps(dateDict,ensure_ascii=False)
+f.write(dateDictJson)
 f.close()

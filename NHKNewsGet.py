@@ -28,9 +28,14 @@ for i in range(8):
     newsDict.append(newsList)
 
 #地域ごとのニュースも取れるみたいなのでいれておく
-#県庁所在地
-kencho = {"sapporo","aomori","morioka","sendai","akita","yamagata","fukushima","mito","utsunomiya","maebashi","saitama","chiba","tokyo","yokohama","niigata","toyama","kanazawa","fukui","kofu","nagano","gifu","shizuoka","nagoya","tsu","otsu","kyoto","osaka","kobe","nara","wakayama","tottori","matsue","okayama","hiroshima","yamaguchi","tokushima","takamatsu","matsuyama","kochi","fukuoka","saga","nagasaki","kumamoto","oita","miyazaki","kagoshima","naha"}
-    
+#県庁所在地(東京はshutoken, 那覇はokinawaっぽい)
+kencho = ["sapporo","aomori","morioka","sendai","akita","yamagata","fukushima",
+          "mito","utsunomiya","maebashi","saitama","chiba","shutoken","yokohama",
+          "niigata","toyama","kanazawa","fukui","kofu","nagano","gifu","shizuoka","nagoya",
+          "tsu","otsu","kyoto","osaka","kobe","nara","wakayama",
+          "tottori","matsue","okayama","hiroshima","yamaguchi","tokushima","takamatsu","matsuyama","kochi",
+          "fukuoka","saga","nagasaki","kumamoto","oita","miyazaki","kagoshima","okinawa"]
+
 #47都道府県分
 for ken in kencho:
     url = urlBase2 + ken + "/toplist.xml"

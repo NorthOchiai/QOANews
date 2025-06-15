@@ -43,12 +43,12 @@ todofuken = ["北海道", "青森県", "岩手県", "宮城県", "秋田県", "�
              "福岡県", "佐賀県", "長崎県", "熊本県", "大分県", "宮崎県", "鹿児島県", "沖縄県"]
 
 # 47都道府県分
-for ken in kencho:
+for i, ken in enumerate(kencho):
     url = urlBase2 + ken + "/toplist.xml"
     raw = feedparser.parse(url)
     # 県ごとのニュース
     newsList = {}
-    newsList['cat'] = todofuken
+    newsList['cat'] = todofuken[i]
     newsList['updated'] = raw['feed']['updated']
     news = []
     for rawArticle in raw['entries']:

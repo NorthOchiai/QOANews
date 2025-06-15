@@ -15,6 +15,7 @@ for i in range(8):
     newsList = {}
     newsList['cat'] = raw['feed']['title']
     newsList['updated'] = raw['feed']['updated']
+    newsList['link'] = raw['feed']['link']
     news = []
     for rawArticle in raw['entries']:
         article = {}
@@ -50,6 +51,7 @@ for i, ken in enumerate(kencho):
     newsList = {}
     newsList['cat'] = todofuken[i]
     newsList['updated'] = raw['feed']['updated']
+    newsList['link'] = "https://www3.nhk.or.jp/lnews/"+ken+"/"
     news = []
     for rawArticle in raw['entries']:
         article = {}
